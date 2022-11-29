@@ -4,6 +4,7 @@ import com.acs.activitytracker.dto.LeaderBoardDTO;
 import com.acs.activitytracker.dto.LeaderBoardRequestDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,11 @@ public class LeaderBoardController {
     @PostMapping
     public ResponseEntity<List<LeaderBoardDTO>> getLeaders(@RequestBody LeaderBoardRequestDto leaderBoardRequestDto) {
         return ResponseEntity.ok(getAllLeaders());
+    }
+
+    @GetMapping
+    public String welcome() {
+        return "It's working!!!!";
     }
 
 
